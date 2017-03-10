@@ -1,11 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Web;
-using System.Web.Mvc;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 
-namespace NIIT.BookStore.Web
+namespace NIIT.BookStore2.Web
 {
     public static class RouteConfig
     {
@@ -14,14 +13,6 @@ namespace NIIT.BookStore.Web
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
-  
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
-            routes.MapRoute(
-                    name: "Default",
-                    url: "{controller}/{action}/{id}",
-                    defaults: new { Controller="Home", action = "Index", id = UrlParameter.Optional }
-                );
         }
     }
 }
